@@ -10,7 +10,8 @@
     },
     "home": {
       "scripts": [
-        "js/home.js"
+        "js/home.js",
+        "js/missing.js"
       ]
     }
   },
