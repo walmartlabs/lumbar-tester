@@ -16,7 +16,9 @@
   "engines": {
     "node": ">=0.4.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "async": "0.1.18"
+  },
   "devDependencies": {
     "glob": "~2.0",
     "lumbar": "*",
