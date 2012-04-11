@@ -20,9 +20,9 @@
     "async": "0.1.18"
   },
   "devDependencies": {
-    "glob": "~2.0",
+    "glob": "*",
     "lumbar": "*",
-    "wrench": "~1.2"
+    "wrench": "*"
   },
   "main": "lib/lumbar-tester",
   "scripts": {
