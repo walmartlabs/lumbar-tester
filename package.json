@@ -1,0 +1,29 @@
+{
+  "author": "Kevin Decker <kpdecker@gmail.com> (http://incaseofstairs.com)",
+  "name": "lumbar-tester",
+  "description": "Unit testing plugin for Lumbar",
+  "keywords": [
+    "lumbar",
+    "build",
+    "module",
+    "mobile",
+    "test"
+  ],
+  "version": "1.0.0",
+  "repository": {
+    "url": "git://github.com/walmartlabs/lumbar-tester.git"
+  },
+  "engines": {
+    "node": ">=0.4.2"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "glob": "~2.0",
+    "lumbar": "*",
+    "wrench": "~1.2"
+  },
+  "main": "lib/lumbar-tester",
+  "scripts": {
+    "test": "expresso -s test/*"
+  }
+}
