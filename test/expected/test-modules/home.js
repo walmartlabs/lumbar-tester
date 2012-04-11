@@ -5,9 +5,9 @@ var home = 1;
 ;;
 var missing;
 ;;
-(function() {
+exports.initTests = function() {
 test();
 ;;
-})();
+};
 return module.exports;
 }).call(this);

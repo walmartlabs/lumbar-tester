@@ -21,6 +21,7 @@
     "module": "base"
   },
   "test": {
-    "auto-include": "test/"
+    "auto-include": "test/",
+    "export": "initTests"
   }
 }
