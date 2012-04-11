@@ -1,0 +1,25 @@
+{
+  "modules": {
+    "base": {
+      "scripts": [
+        "js/base.js"
+      ],
+      "tests": [
+        "test/js/home.js"
+      ]
+    },
+    "home": {
+      "scripts": [
+        "js/home.js"
+      ]
+    }
+  },
+
+  "application": {
+    "name": "Lumbar",
+    "module": "base"
+  },
+  "test": {
+    "auto-include": "test/"
+  }
+}
