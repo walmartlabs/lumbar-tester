@@ -13,6 +13,14 @@
         "js/home.js",
         "js/missing.js"
       ]
+    },
+
+    "test": {
+      "topLevelName": "Test",
+      "test-module": true,
+      "scripts": [
+        "js/test.js"
+      ]
     }
   },
 
