@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "expresso": "~0.9",
-    "glob": "*",
+    "glob": "~3.0",
     "lumbar": "*",
     "wrench": "*"
   },
