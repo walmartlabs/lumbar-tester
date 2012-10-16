@@ -20,14 +20,15 @@
     "async": "0.1.18"
   },
   "devDependencies": {
-    "expresso": "~0.9",
+    "mocha": "~1.6",
+    "should": "~1.2",
     "glob": "~3.0",
     "lumbar": "*",
     "wrench": "*"
   },
   "main": "lib/lumbar-tester",
   "scripts": {
-    "test": "node_modules/.bin/expresso -s test/*"
+    "test": "node_modules/.bin/mocha test/*.js"
   },
   "optionalDependencies": {}
 }
