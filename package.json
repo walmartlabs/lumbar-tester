@@ -23,7 +23,7 @@
     "mocha": "~1.6",
     "should": "~1.2",
     "glob": "~3.0",
-    "lumbar": "*",
+    "lumbar": "~2.0",
     "wrench": "*"
   },
   "main": "lib/lumbar-tester",
