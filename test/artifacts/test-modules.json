@@ -31,5 +31,6 @@
   "test": {
     "auto-include": "test/",
     "export": "initTests"
-  }
+  },
+  "scope": "none"
 }
