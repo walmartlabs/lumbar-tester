@@ -1,4 +1,6 @@
-var assert = require('assert'),
+var _ = require('underscore'),
+    assert = require('assert'),
+    build = require('../node_modules/lumbar/lib/build'),
     fs = require('fs'),
     lib = require('../node_modules/lumbar/test/lib'),
     watch = require('../node_modules/lumbar/test/lib/watch');
@@ -16,6 +18,55 @@ describe('lumbar-tester', function() {
     it('should ignore test files', lib.runTest('test/artifacts/test-modules.json', 'test/expected/no-tests', {plugins: [lumbarNoTester]}));
   });
 
+  describe('mixin', function() {
+    var config = {};
+    lib.mockFileList(config);
+    lib.mockStat(config);
+
+    it('should auto-include within mixins', function(done) {
+      var lumbarTester = require('../lib/lumbar-tester')({includeTests: true});
+      var config = {
+        plugins: [lumbarTester],
+        test: {
+          'auto-include': 'testFoo/'
+        }
+      };
+      var module = {
+        mixins: ['mixin1'],
+        scripts: [ 'baz1.1' ]
+      };
+
+      var mixins = [
+        {
+          root: 'mixin1/',
+          mixins: {
+            mixin1: {
+              scripts: [ 'baz1.1' ]
+            },
+          },
+          test: {
+            'auto-include': 'test/'
+          }
+        }
+      ];
+
+      lib.pluginExec(lumbarTester, 'scripts', module, mixins, config, function(resources, context) {
+        resources = _.map(resources, function(resource) {
+          return resource.stringValue || resource.src;
+        });
+
+        resources.should.eql([
+          'mixin1/baz1.1',
+          'baz1.1',
+          'exports.tests = function() {\n',
+          'mixin1/test/baz1.1',
+          'testFoo/baz1.1',
+          '};\n'
+        ]);
+        done();
+      });
+    });
+  });
 
   describe('watch', function() {
     var lumbarTester = require('../lib/lumbar-tester')({includeTests: true});
