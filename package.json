@@ -21,9 +21,10 @@
   },
   "devDependencies": {
     "mocha": "~1.6",
-    "should": "~1.2",
     "glob": "~3.0",
     "lumbar": "~2.0",
+    "should": "~1.2",
+    "sinon": "*",
     "underscore": "~1.4",
     "wrench": "*"
   },
