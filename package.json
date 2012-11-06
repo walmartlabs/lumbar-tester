@@ -24,6 +24,7 @@
     "should": "~1.2",
     "glob": "~3.0",
     "lumbar": "~2.0",
+    "underscore": "~1.4",
     "wrench": "*"
   },
   "main": "lib/lumbar-tester",
