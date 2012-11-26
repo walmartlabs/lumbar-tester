@@ -1,6 +1,4 @@
 var _ = require('underscore'),
-    assert = require('assert'),
-    build = require('../node_modules/lumbar/lib/build'),
     fs = require('fs'),
     lib = require('../node_modules/lumbar/test/lib'),
     watch = require('../node_modules/lumbar/test/lib/watch');
@@ -26,7 +24,10 @@ describe('lumbar-tester', function() {
     it('should auto-include within mixins', function(done) {
       var lumbarTester = require('../lib/lumbar-tester')({includeTests: true});
       var config = {
-        plugins: [lumbarTester],
+        plugins: [
+          'mixin',
+          lumbarTester
+        ],
         test: {
           'auto-include': 'testFoo/'
         }
@@ -50,7 +51,7 @@ describe('lumbar-tester', function() {
         }
       ];
 
-      lib.pluginExec(lumbarTester, 'scripts', module, mixins, config, function(resources, context) {
+      lib.pluginExec(lumbarTester, 'scripts', module, mixins, config, function(resources) {
         resources = _.map(resources, function(resource) {
           return resource.stringValue || resource.src;
         });
@@ -85,7 +86,7 @@ describe('lumbar-tester', function() {
       originalReadSync = fs.readFileSync;
       originalStat = fs.stat;
 
-      fs.readFileSync = function(path) {
+      fs.readFileSync = function() {
         return JSON.stringify({
           modules: {
             module: {scripts: ['js/views/test.js']}
