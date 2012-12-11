@@ -9,7 +9,7 @@
     "mobile",
     "test"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": {
     "url": "git://github.com/walmartlabs/lumbar-tester.git"
   },
