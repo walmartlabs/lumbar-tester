@@ -39,6 +39,7 @@ describe('lumbar-tester', function() {
 
       var mixins = [
         {
+          name: 'mixin',
           root: 'mixin1/',
           mixins: {
             mixin1: {
