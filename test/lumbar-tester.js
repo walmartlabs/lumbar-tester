@@ -53,10 +53,21 @@ describe('lumbar-tester', function() {
       ];
 
       lib.pluginExec(lumbarTester, 'scripts', module, mixins, config, function(resources) {
+        var mixins = _.map(resources, function(resource) {
+          return (resource.mixin || {}).root;
+        });
         resources = _.map(resources, function(resource) {
           return resource.stringValue || resource.src;
         });
 
+        mixins.should.eql([
+          'mixin1/',
+          undefined,
+          undefined,
+          'mixin1/',
+          undefined,
+          undefined
+        ]);
         resources.should.eql([
           'mixin1/baz1.1',
           'baz1.1',
