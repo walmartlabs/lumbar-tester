@@ -17,13 +17,13 @@
     "node": ">=0.4.2"
   },
   "dependencies": {
-    "async": "0.1.18",
+    "async": "~0.2",
     "underscore": "~1.4"
   },
   "devDependencies": {
-    "mocha": "~1.6",
-    "glob": "~3.0",
-    "lumbar": "~2.0",
+    "mocha": "~1.9",
+    "glob": "~3.1",
+    "lumbar": "~2.1",
     "should": "~1.2",
     "sinon": "*",
     "wrench": "*"
