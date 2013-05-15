@@ -54,7 +54,7 @@ describe('lumbar-tester', function() {
 
       lib.pluginExec(lumbarTester, 'scripts', module, mixins, config, function(resources) {
         var mixins = _.map(resources, function(resource) {
-          return (resource.mixin || {}).root;
+          return (resource.library || {}).root;
         });
         resources = _.map(resources, function(resource) {
           return resource.stringValue || resource.src;
