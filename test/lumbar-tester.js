@@ -43,7 +43,7 @@ describe('lumbar-tester', function() {
           root: 'mixin1/',
           mixins: {
             mixin1: {
-              scripts: [ 'baz1.1' ]
+              scripts: [ 'baz1.1', {src: 'baz1.2'} ]
             },
           },
           test: {
@@ -62,17 +62,21 @@ describe('lumbar-tester', function() {
 
         mixins.should.eql([
           'mixin1/',
+          'mixin1/',
           undefined,
           undefined,
+          'mixin1/',
           'mixin1/',
           undefined,
           undefined
         ]);
         resources.should.eql([
           'mixin1/baz1.1',
+          'mixin1/baz1.2',
           'baz1.1',
           'exports.tests = function() {\n',
           'mixin1/test/baz1.1',
+          'mixin1/test/baz1.2',
           'testFoo/baz1.1',
           '};\n'
         ]);
