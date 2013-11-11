@@ -86,8 +86,6 @@ describe('lumbar-tester', function() {
 
     var mock,
         originalRead,
-        originalReadSync,
-        originalStat,
 
         fileFilter;
 
@@ -95,8 +93,6 @@ describe('lumbar-tester', function() {
     before(function() {
       mock = watch.mockWatch();
       originalRead = fs.readFile;
-      originalReadSync = fs.readFileSync;
-      originalStat = fs.stat;
 
       fs.readFileSync = function() {
         return JSON.stringify({
