@@ -24,7 +24,6 @@
     "mocha": "~1.9",
     "glob": "~3.2",
     "lumbar": "~2.1",
-    "should": "~1.2",
     "sinon": "*",
     "wrench": "*"
   },
