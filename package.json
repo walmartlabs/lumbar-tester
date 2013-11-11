@@ -26,6 +26,7 @@
     "glob": "~3.2",
     "lumbar": "~2.4",
     "sinon": "*",
+    "sinon-chai": "~2.4.0",
     "wrench": "*"
   },
   "main": "lib/lumbar-tester",
