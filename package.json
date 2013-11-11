@@ -21,6 +21,7 @@
     "underscore": "~1.4"
   },
   "devDependencies": {
+    "chai": "~1.8.1",
     "mocha": "~1.9",
     "glob": "~3.2",
     "lumbar": "~2.4",
